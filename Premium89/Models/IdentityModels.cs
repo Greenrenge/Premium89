@@ -29,5 +29,12 @@ namespace Premium89.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // PostgreSQL uses the public schema by default - not dbo.
+            modelBuilder.HasDefaultSchema("public");
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
