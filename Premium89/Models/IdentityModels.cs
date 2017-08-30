@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Premium89.Migrations;
 
 namespace Premium89.Models
 {
@@ -32,6 +33,7 @@ namespace Premium89.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
             // PostgreSQL uses the public schema by default - not dbo.
             modelBuilder.HasDefaultSchema("public");
             base.OnModelCreating(modelBuilder);
