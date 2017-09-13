@@ -1,0 +1,27 @@
+﻿@using Premium89.Models.Themes
+@model NavMenuModel
+@{ 
+    string ActiveMenu = ViewBag.Menu;
+    if (String.IsNullOrEmpty(ActiveMenu))
+    {
+        ActiveMenu = null;
+    }
+}
+<nav class="navbar navbar-fixed-top nav-scroll">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span aria-hidden="true" class="icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="Scripts/assets/images/flogo.png" alt="" class="img-responsive"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="js-navbar-menu">
+                <ul class="nav navbar-nav navbar-right ep-mobile-menu" id="navbar-nav">
+                    @Html.Raw(Model.Render(ActiveMenu))
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
