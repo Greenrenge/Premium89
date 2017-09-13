@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Premium89.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,19 @@ namespace Premium89.Controllers
         {
             return View();
         }
+        public ContentResult RefreshMenu()
+        {
+            ConfigGUI.NavMenuInitialize();
+            return Content("Success");
+        }
+
+
+
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
+            ViewBag.Message = "Your application description page.";
             return View();
         }
 

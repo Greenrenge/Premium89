@@ -239,6 +239,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Config\ConfigGUI.cs" />
+    <Compile Include="Config\SessionData.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -255,6 +257,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Themes\MasterMenu.cs" />
     <Compile Include="Models\Themes\NavMenuModel.cs" />
+    <Compile Include="Config\WebConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -532,6 +535,15 @@
     <EmbeddedResource Include="Migrations\201708301347330_initial.resx">
       <DependentUpon>201708301347330_initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JSONConfigHelper\JSONConfigHelper.csproj">
+      <Project>{682ec9f6-5e74-4b02-98c9-bb876aa16fa1}</Project>
+      <Name>JSONConfigHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

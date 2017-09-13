@@ -14,15 +14,15 @@ namespace JSONConfigHelper
         //synchronously read/write all files by this class
         protected static readonly object lockCheck = new object();
     }
-    public class ConfigurationManager<T> : ConfigLockCheck where T:new()
+    public class JSONConfigurationManager<T> : ConfigLockCheck where T:new()
     {
         private T _object;
         private JsonSerializerSettings _setting;
-        public ConfigurationManager(T obj,JsonSerializerSettings setting=null)
+        public JSONConfigurationManager(T obj=default(T),JsonSerializerSettings setting=null)
         {
             _object = obj;
             if (setting != null) _setting = setting;
-            else setting = new JsonSerializerSettings()
+            else _setting = new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                 Formatting = Formatting.Indented,
@@ -39,6 +39,7 @@ namespace JSONConfigHelper
                         file.SetLength(0);
                         using (var stream = new StreamWriter(file))
                         {
+                            stream.AutoFlush = true;
                             var serializer = JsonSerializer.Create(_setting);
                             serializer.Serialize(stream, _object);
                         }
@@ -46,9 +47,9 @@ namespace JSONConfigHelper
                     }
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+                throw;
             }
         }
         public T ReadConfig(string absolutePath)
@@ -70,11 +71,10 @@ namespace JSONConfigHelper
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+                throw;
             }
-            return default(T);
         }
 
     }

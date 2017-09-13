@@ -1,4 +1,7 @@
-﻿using Premium89.Models.Themes;
+﻿using JSONConfigHelper;
+using Premium89.Config;
+using Premium89.Models;
+using Premium89.Models.Themes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +23,7 @@ namespace Premium89
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
-            MasterMenu.Initialize(@"http://localhost:60180");
+            ConfigGUI.NavMenuInitialize();
         }
     }
 }

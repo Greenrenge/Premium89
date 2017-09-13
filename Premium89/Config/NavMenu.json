@@ -1,0 +1,95 @@
+{
+  "RootMenu": [
+    {
+      "MenuName": "Home",
+      "DisplayText": "HOME",
+      "Link": "http://localhost:60180/Home/Index",
+      "Order": 0,
+      "HasChild": false,
+      "ChildMenus": []
+    },
+    {
+      "MenuName": "Shop",
+      "DisplayText": "SHOP",
+      "Link": "http://localhost:60180/Shop/Items",
+      "Order": 1,
+      "HasChild": false,
+      "ChildMenus": []
+    },
+    {
+      "MenuName": "Gallery",
+      "DisplayText": "GALLERY",
+      "Link": null,
+      "Order": 2,
+      "HasChild": true,
+      "ChildMenus": [
+        {
+          "MenuName": "Mobile",
+          "DisplayText": "MOBILE",
+          "Link": null,
+          "Order": 1,
+          "HasChild": true,
+          "ChildMenus": [
+            {
+              "MenuName": "Nokia",
+              "DisplayText": "NOKIA",
+              "Link": null,
+              "Order": 1,
+              "HasChild": true,
+              "ChildMenus": [
+                {
+                  "MenuName": "Nokia3310",
+                  "DisplayText": "NOKIA 3310",
+                  "Link": null,
+                  "Order": 1,
+                  "HasChild": false,
+                  "ChildMenus": [ ]
+                },
+                {
+                  "MenuName": "Nokia3315",
+                  "DisplayText": "NOKIA 3315",
+                  "Link": null,
+                  "Order": 2,
+                  "HasChild": false,
+                  "ChildMenus": [ ]
+                }
+              ]
+            },
+            {
+              "MenuName": "iPhone",
+              "DisplayText": "iPhone",
+              "Link": null,
+              "Order": 1,
+              "HasChild": true,
+              "ChildMenus": []
+            }
+          ]
+        },
+        {
+          "MenuName": "TV",
+          "DisplayText": "TV",
+          "Link": "http://localhost:60180/Shop/Items",
+          "Order": 2,
+          "HasChild": false,
+          "ChildMenus": []
+        }
+      ]
+    },
+    {
+      "MenuName": "About",
+      "DisplayText": "ABOUT",
+      "Link": "http://localhost:60180/Shop/Items",
+      "Order": 3,
+      "HasChild": false,
+      "ChildMenus": []
+    },
+    {
+      "MenuName": "Contact",
+      "DisplayText": "CONTACT",
+      "Link": "http://localhost:60180/Shop/Items",
+      "Order": 4,
+      "HasChild": false,
+      "ChildMenus": []
+    }
+  ]
+}

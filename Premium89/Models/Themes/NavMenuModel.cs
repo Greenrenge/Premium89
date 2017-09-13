@@ -8,10 +8,15 @@ namespace Premium89.Models.Themes
 {
     public class NavMenuModel
     {
-        private static List<Menu> _rootMenu;
+        private List<Menu> _rootMenu;
         public NavMenuModel()
         {
             _rootMenu = new List<Menu>();
+        }
+        public List<Menu> RootMenu
+        {
+            get { return _rootMenu; }
+            set { _rootMenu = value; }
         }
         public void AddRoot(Menu menu)
         {
