@@ -256,6 +256,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Themes\MasterMenu.cs" />
+    <Compile Include="Models\Themes\Menu.cs" />
     <Compile Include="Models\Themes\NavMenuModel.cs" />
     <Compile Include="Config\WebConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
