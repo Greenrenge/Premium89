@@ -251,10 +251,20 @@
     <Compile Include="Migrations\201708301347330_initial.Designer.cs">
       <DependentUpon>201708301347330_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709171557412_addCate.cs" />
+    <Compile Include="Migrations\201709171557412_addCate.Designer.cs">
+      <DependentUpon>201709171557412_addCate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Shopping\Category.cs" />
+    <Compile Include="Models\Shopping\Color.cs" />
+    <Compile Include="Models\Shopping\Link.cs" />
+    <Compile Include="Models\Shopping\Product.cs" />
+    <Compile Include="Models\Shopping\Size.cs" />
+    <Compile Include="Models\Shopping\SizeGroup.cs" />
     <Compile Include="Models\Themes\MasterMenu.cs" />
     <Compile Include="Models\Themes\Menu.cs" />
     <Compile Include="Models\Themes\NavMenuModel.cs" />
@@ -535,6 +545,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708301347330_initial.resx">
       <DependentUpon>201708301347330_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709171557412_addCate.resx">
+      <DependentUpon>201709171557412_addCate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -13,27 +13,12 @@ namespace Premium89.Controllers
         {
             return View();
         }
-        public ContentResult RefreshMenu()
-        {
-            ConfigGUI.NavMenuInitialize();
-            return Content("Success");
-        }
 
+        //public ContentResult RefreshMenu()
+        //{
+        //    ConfigGUI.NavMenuInitialize();
+        //    return Content("Success");
+        //}
 
-
-
-        public ActionResult About()
-        {
-
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

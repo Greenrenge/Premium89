@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Premium89.Migrations;
+using Premium89.Models.Shopping;
 
 namespace Premium89.Models
 {
@@ -33,11 +34,29 @@ namespace Premium89.Models
             return new ApplicationDbContext();
         }
 
+
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Color> Colors { get; set; }
+        public virtual DbSet<Link> Links { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Size> Sizes { get; set; }
+        public virtual DbSet<SizeGroup> SizeGroups { get; set; }
+
+
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //https://stackoverflow.com/questions/28531201/entitytype-identityuserlogin-has-no-key-defined-define-the-key-for-this-entit
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
             // PostgreSQL uses the public schema by default - not dbo.
             modelBuilder.HasDefaultSchema("public");
+
+            modelBuilder.Entity<Category>()
+                    .HasMany(e => e.ChildCates)
+                    .WithOptional(x => x.ParentCate)
+                    .HasForeignKey(e => e.ParentCategoryId);
+
             base.OnModelCreating(modelBuilder);
         }
     }
