@@ -255,6 +255,10 @@
     <Compile Include="Migrations\201709171557412_addCate.Designer.cs">
       <DependentUpon>201709171557412_addCate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709191504166_add_cart.cs" />
+    <Compile Include="Migrations\201709191504166_add_cart.Designer.cs">
+      <DependentUpon>201709191504166_add_cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -552,6 +556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709171557412_addCate.resx">
       <DependentUpon>201709171557412_addCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191504166_add_cart.resx">
+      <DependentUpon>201709191504166_add_cart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace Premium89.Models.Shopping
         public SizeGroup()
         {
             Sizes = new HashSet<Size>();
+            Active = "A";
         }
         public int SizeGroupId { get; set; }
         [Required]

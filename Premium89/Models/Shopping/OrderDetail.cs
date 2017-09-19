@@ -8,6 +8,10 @@ namespace Premium89.Models.Shopping
 {
     public class OrderDetail
     {
+        public OrderDetail()
+        {
+            Active = "A";
+        }
         public long OrderDetailId { get; set; }
 
         public long ProductId { get; set; }

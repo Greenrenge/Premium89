@@ -7,7 +7,7 @@ namespace Premium89.Models.Shopping
     {
         public Link()
         {
-
+            Active = "A";
         }
         public long LinkId { get; set; }
         public string ServerDomain { get; set; }

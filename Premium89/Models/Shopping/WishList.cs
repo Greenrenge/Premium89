@@ -9,6 +9,10 @@ namespace Premium89.Models.Shopping
 {
     public class WishList
     {
+        public WishList()
+        {
+            Active = "A";
+        }
         public long WishListId { get; set; }
 
         [Required]
@@ -18,7 +22,7 @@ namespace Premium89.Models.Shopping
 
         [Required]
         [ForeignKey("Product")]
-        public string ProductId { get; set; }
+        public long ProductId { get; set; }
         public virtual Product Product { get; set; }
 
         [StringLength(1)]

@@ -12,6 +12,8 @@ namespace Premium89.Models.Shopping
         public Category()
         {
             ChildCates = new HashSet<Category>();
+            Products = new HashSet<Product>();
+            Active = "A";
         }
         [Key]
         public long CategoryId { get; set; }

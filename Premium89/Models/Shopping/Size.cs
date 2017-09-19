@@ -6,7 +6,7 @@ namespace Premium89.Models.Shopping
     {
         public Size()
         {
-                
+            Active = "A";
         }
         public int SizeId { get; set; }
         [Required]

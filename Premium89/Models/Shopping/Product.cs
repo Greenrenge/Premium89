@@ -15,6 +15,7 @@ namespace Premium89.Models.Shopping
             Colors = new HashSet<Color>();
             PictureUrls = new HashSet<Link>();
             Categories = new HashSet<Category>();
+            Active = "A";
         }
         public long ProductId { get; set; }
         [Required]

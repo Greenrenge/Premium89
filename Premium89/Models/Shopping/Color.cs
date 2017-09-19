@@ -6,7 +6,7 @@ namespace Premium89.Models.Shopping
     {
         public Color()
         {
-
+            Active = "A";
         }
         public long ColorId { get; set; }
         [Required]

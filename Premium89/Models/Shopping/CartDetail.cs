@@ -9,6 +9,10 @@ namespace Premium89.Models.Shopping
 {
     public class CartItem
     {
+        public CartItem()
+        {
+            Active = "A";
+        }
         public long CartItemId { get; set; }
 
         public long ProductId { get; set; }

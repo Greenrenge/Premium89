@@ -12,6 +12,7 @@ namespace Premium89.Models.Shopping
         public Order()
         {
             OrderDetails = new HashSet<OrderDetail>();
+            Active = "A";
         }
 
         public DateTime OrderDate { get; set; }
