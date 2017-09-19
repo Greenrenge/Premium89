@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -23,7 +24,26 @@ namespace Premium89.Models.Shopping
         [StringLength(10000)]
         public string ProductSpecification { get; set; }
         public long ItemLeft { get; set; }
-        public decimal PriceTHB { get; set; }
+        public decimal OriginalPriceTHB { get; set; }
+        public DateTime? SaleStartPeriod { get; set; }
+        public DateTime? SaleEndPeriod { get; set; }
+
+        [NotMapped]
+        public bool IsSale
+        {
+            get
+            {
+                if (SaleStartPeriod.HasValue && SaleEndPeriod.HasValue)
+                    return DateTime.Now >= SaleStartPeriod && DateTime.Now <= SaleEndPeriod;
+                else if (!SaleStartPeriod.HasValue && !SaleEndPeriod.HasValue) return false;
+                else if (!SaleStartPeriod.HasValue) return DateTime.Now <= SaleEndPeriod;
+                else return DateTime.Now >= SaleStartPeriod;
+            }
+        }
+
+        [NotMapped]
+        public decimal Price { get { if (IsSale) return DiscountedPriceTHB; else return OriginalPriceTHB; } }
+        public decimal DiscountedPriceTHB { get; set; }
 
         [StringLength(1)]
         public string Active { get; set; }

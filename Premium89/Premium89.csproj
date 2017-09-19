@@ -259,12 +259,16 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Shopping\Cart.cs" />
     <Compile Include="Models\Shopping\Category.cs" />
     <Compile Include="Models\Shopping\Color.cs" />
     <Compile Include="Models\Shopping\Link.cs" />
+    <Compile Include="Models\Shopping\Order.cs" />
+    <Compile Include="Models\Shopping\OrderDetail.cs" />
     <Compile Include="Models\Shopping\Product.cs" />
     <Compile Include="Models\Shopping\Size.cs" />
     <Compile Include="Models\Shopping\SizeGroup.cs" />
+    <Compile Include="Models\Shopping\WishList.cs" />
     <Compile Include="Models\Themes\MasterMenu.cs" />
     <Compile Include="Models\Themes\Menu.cs" />
     <Compile Include="Models\Themes\NavMenuModel.cs" />

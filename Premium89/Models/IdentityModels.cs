@@ -5,12 +5,17 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Premium89.Migrations;
 using Premium89.Models.Shopping;
+using System.Collections.Generic;
 
 namespace Premium89.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ApplicationUser():base()
+        {
+            Orders = new HashSet<Order>();
+        }
         //ApplicationUser newUser = new ApplicationUser(); วิธีใช้?
         //var claims = await ApplicationUser.GenerateUserIdentityAsync(manager);
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -20,6 +25,7 @@ namespace Premium89.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
