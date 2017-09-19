@@ -17,6 +17,7 @@ namespace Premium89.Models.Shopping
             Categories = new HashSet<Category>();
         }
         public long ProductId { get; set; }
+        [Required]
         public string ProductName { get; set; }
         public string ProductShortDescription { get; set; }
         [StringLength(10000)]
@@ -46,6 +47,7 @@ namespace Premium89.Models.Shopping
         public decimal DiscountedPriceTHB { get; set; }
 
         [StringLength(1)]
+        [Required]
         public string Active { get; set; }
 
         public virtual ICollection<Size> Sizes { get; set; }

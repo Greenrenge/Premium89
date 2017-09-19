@@ -26,6 +26,7 @@ namespace Premium89.Models
             return userIdentity;
         }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<CartItem> CartItems { get; set;}
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

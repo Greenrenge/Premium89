@@ -17,6 +17,7 @@ namespace Premium89.Models.Shopping
         public long CategoryId { get; set; }
 
         [Index(IsUnique = true)]
+        [Required]
         public string CategoryName { get; set; }
 
         //[ForeignKey("ParentCate")]
@@ -29,6 +30,7 @@ namespace Premium89.Models.Shopping
         public virtual ICollection<Product> Products { get; set; }
 
         [StringLength(1)]
+        [Required]
         public string Active { get; set; }
     }
 }
