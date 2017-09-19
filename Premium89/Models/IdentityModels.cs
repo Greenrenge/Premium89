@@ -12,7 +12,7 @@ namespace Premium89.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser():base()
+        public ApplicationUser() : base()
         {
             Orders = new HashSet<Order>();
         }
@@ -26,7 +26,9 @@ namespace Premium89.Models
             return userIdentity;
         }
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<CartItem> CartItems { get; set;}
+        public virtual ICollection<CartItem> CartItems { get; set; }
+        public virtual ICollection<WishList> WishLists { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
